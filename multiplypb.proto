@@ -1,0 +1,20 @@
+syntax = "proto3";
+package multiply;
+option go_package="./multiplypb";
+
+message Numbers {
+    int64 a = 1;
+    int64 b = 2;
+}
+
+message MultiplyRequest {
+    Numbers numbers = 1;
+}
+
+message MultiplyResponse {
+    int64 result = 1;
+}
+
+service MultiplyService {
+    rpc Multiply(MultiplyRequest) returns (MultiplyResponse){}
+}
